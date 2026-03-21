@@ -1,3 +1,4 @@
+"use client";
 export default function Navbar() {
   const openInstagram = () => {
     window.open("https://instagram.com/singular.crochet", "_blank");
