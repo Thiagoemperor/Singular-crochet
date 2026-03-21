@@ -1,16 +1,22 @@
-import Navbar from "../components/layout/Navbar"; 
+import Navbar from "../components/layout/Navbar";
+import ProductCard from "../components/products/ProductCard";
+import { products } from "../lib/products";
 
 export default function Home() {
   return (
     <main>
       <Navbar />
-      <section className="p-10 text-center">
-        <h1 className="text-4xl font-light">
-          Piezas <span className="italic text-[#8a5a6e]">únicas</span> tejidas a mano
+
+      <section className="p-10">
+        <h1 className="text-4xl font-light mb-6">
+          Productos destacados
         </h1>
-        <p className="mt-4 text-gray-600">
-          Cada pieza está hecha con amor 💖
-        </p>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
       </section>
     </main>
   );
