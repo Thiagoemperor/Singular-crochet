@@ -10,7 +10,13 @@ export default function CartIcon() {
 
   return (
     <>
-      <div className="relative cursor-pointer" onClick={() => setOpen(true)}>
+      <div
+        className="relative cursor-pointer"
+        onClick={() => {
+          console.log("click carrito");
+          setOpen(true);
+        }}
+      >
         <span className="text-2xl">🛒</span>
 
         {items.length > 0 && (
@@ -20,7 +26,7 @@ export default function CartIcon() {
         )}
       </div>
 
-      <CartDrawer open={open} setOpen={setOpen} />
+      {open && <CartDrawer open={open} setOpen={setOpen} />}
     </>
   );
 }
