@@ -1,6 +1,5 @@
 "use client";
-
-import { useCartStore } from "@/store/cartStore";
+import { useCartStore } from "../../store/cartStore";
 
 export default function ProductCard({ product }: any) {
   const addToCart = useCartStore((state: any) => state.addToCart);
