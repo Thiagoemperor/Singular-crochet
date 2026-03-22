@@ -7,14 +7,20 @@ export default function Navbar() {
 
   return (
     <nav className="flex justify-between items-center p-4 bg-white shadow">
-      <h1 className="font-semibold">🧶 Singular Crochet</h1>
+  <h1>🧶 Singular Crochet</h1>
 
-      <button
-        onClick={openInstagram}
-        className="bg-[#8a5a6e] text-white px-4 py-2 rounded-full"
-      >
-        Seguinos
-      </button>
-    </nav>
+  <div className="flex items-center gap-4">
+    <button
+      onClick={() =>
+        window.open("https://instagram.com/singular.crochet", "_blank")
+      }
+      className="bg-[#8a5a6e] text-white px-4 py-2 rounded-full"
+    >
+      Seguinos
+    </button>
+
+    <CartIcon />
+  </div>
+</nav>
   );
 }
