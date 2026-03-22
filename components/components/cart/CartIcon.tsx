@@ -1,0 +1,19 @@
+"use client";
+
+import { useCartStore } from "../../store/cartStore";
+
+export default function CartIcon() {
+  const items = useCartStore((state: any) => state.items);
+
+  return (
+    <div className="relative">
+      <span className="text-2xl">🛒</span>
+
+      {items.length > 0 && (
+        <span className="absolute -top-2 -right-2 bg-[#8a5a6e] text-white text-xs px-2 py-1 rounded-full">
+          {items.length}
+        </span>
+      )}
+    </div>
+  );
+}
